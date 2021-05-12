@@ -27,8 +27,10 @@ Requirements:
 ---Structure
 
 Models 
-User,Bank
-User=Name,Username, pwd, Role, Balance
+User,Bank Accounts, Transactions
+User=Name,Username, pwd, Role, Balance, ListofTransactions
+BankAccounts=Users, Accounts Balance,
+Transactions=Time, actions, amount
 
 ---Login Screen!
 1. Login prompt
@@ -40,5 +42,3 @@ User=Name,Username, pwd, Role, Balance
   if Customer: Withdraw, Deposit,Transfers 
    If Employee: View details
    If Bank admin: View and edit
-   
-
