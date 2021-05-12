@@ -23,3 +23,22 @@ Requirements:
     o	You should be using TDD
   ●	Logging should be accomplished using Log4J
     o	All transactions should be logged
+
+---Structure
+
+Models 
+User,Bank
+User=Name,Username, pwd, Role, Balance
+
+---Login Screen!
+1. Login prompt
+2. Enter user, does user exist?
+3. Enter password, is that correct password?
+   4.Create new user(Optional)
+-----Welcome!
+1. Show actions.
+  if Customer: Withdraw, Deposit,Transfers 
+   If Employee: View details
+   If Bank admin: View and edit
+   
+
