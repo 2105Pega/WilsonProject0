@@ -1,4 +1,4 @@
-package main.model;
+package models;
 
 import java.sql.Time;
 
@@ -10,17 +10,13 @@ public class Transaction {
     super();
   }
 
-  public Transaction(Time timestamp, String log) {
-    this.timestamp = timestamp;
+  public Transaction(String log) {
+    this.timestamp = new Time(System.currentTimeMillis());
     this.log = log;
   }
 
   public Time getTimestamp() {
     return timestamp;
-  }
-
-  public void setTimestamp(Time timestamp) {
-    this.timestamp = timestamp;
   }
 
   public String getLog() {
