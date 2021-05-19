@@ -1,12 +1,12 @@
-package main;
+package models;
 
 
-import models.Account;
-import models.User;
+import main.View.Menu;
+import main.models.Account;
+import main.models.Transaction;
+import main.models.User;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,19 +15,50 @@ public class Teller {
   public static void main(String[] args) throws Exception {
     HashMap<String, User> users = new HashMap<>();
     HashMap<String, Account> accounts = new HashMap<>();
-
+    HashMap<String, Transaction> transactions = new HashMap<>();
+    HashMap<String, String> ops= new HashMap<>();
+    Integer counter=1;
+    ArrayList<Integer> counters = new ArrayList<>();
+    String input;
     //Create and add user
-    User user= new User("Jocka","pwd123");
-    users.put(user.getUsername(),user);
-    user.CreateAccount(500);
-    //Exeptions
-    //Create and add account
-    Account acount=user.getAccounts();
-    accounts.put(acount.getAccountNumber(), acount);
+    //Create (User
+    User user = new Menu().Loginscreen();
+    users.put(user.getUsername(), user);
 
-    //
-    acount.Deposit(user, 55);
-  }
+    System.out.println(user);
+    System.out.println("Welcome "+user.getUsername() +" How can we help you today?");
+    for (String option:user.getOptions().get(0)){
+      System.out.println(counter+"\t"+option);
+      ops.put(counter.toString(), option);
+      counters.add(counter);
+      counter++; }
+
+    while (true) {
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+      input = reader.readLine();
+      if (ops.containsKey(input)) {
+            Menu usermenu= new Menu();
+            usermenu.UserMenu(user, input);
+      } else {
+        System.out.println("Please choice from above options");
+      }
+      System.out.println("DONE");
+
+
+      Account account = user.getAccounts();
+      accounts.put(account.getAccountNumber(), account);
+
+      try {
+        byte[] Account = accounts.toString().getBytes();
+        byte[] User = users.toString().getBytes();
+
+        FileOutputStream userdisc = new FileOutputStream("src/test/java/resources/userdisc.txt");
+        BufferedOutputStream boutuser = new BufferedOutputStream(userdisc);
+        boutuser.write(User);
+        boutuser.flush();
+      } catch (Exception e) {
+        System.out.println("Nope! " + e);
+      } } }}
 /*
   protected String NewAccountServices() throws IOException {
     String name=null,username=null,password=null, message= null;
@@ -79,4 +110,3 @@ public class Teller {
 
     return session[0]; //Return User
   } */
-}

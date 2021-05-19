@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class BankTest {
 
   public static void main(String[] args) {
+    HashMap<String, String[]> Players= new HashMap<>();
+
+    Players.put("Bob",{"Bob", "Wilson", "d"});
+
   }
 
 //  @Test

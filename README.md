@@ -40,5 +40,5 @@ Transactions=Time, actions, amount
 -----Welcome!
 1. Show actions.
   if Customer: Withdraw, Deposit,Transfers 
-   If Employee: View details
-   If Bank admin: View and edit
+   If Employee: main.View details
+   If Bank admin: main.View and edit
