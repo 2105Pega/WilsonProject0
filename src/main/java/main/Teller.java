@@ -22,7 +22,7 @@ public class Teller {
     String input;
     //Create and add user
     //Create (User
-    User user = new Menu().Loginscreen();
+    User user = new Menu().Loginscreen(); //----To Menu for user instance
     users.put(user.getUsername(), user);
 
     System.out.println(user);
@@ -31,7 +31,7 @@ public class Teller {
       System.out.println(counter+"\t"+option);
       ops.put(counter.toString(), option);
       counters.add(counter);
-      counter++; }
+      counter++; } //Show Menu Options
 
     while (true) {
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

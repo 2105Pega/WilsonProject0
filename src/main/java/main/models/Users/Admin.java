@@ -1,9 +1,4 @@
-package main.models.sub;
-
-import main.models.Account;
-import main.models.User;
-
-import java.util.Map;
+package main.models.Users;
 
 public class Admin extends Employee {
 
@@ -16,5 +11,5 @@ public class Admin extends Employee {
   public void EditCustomer(){};
   public void ViewApplications(){}
   public void EditAccount(){};
-  public void CancelAccount();
+  public void CancelAccount(){};
 }

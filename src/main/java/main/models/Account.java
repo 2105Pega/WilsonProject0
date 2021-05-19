@@ -1,6 +1,6 @@
 package main.models;
 
-import main.models.sub.Admin;
+import main.models.Users.Admin;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,6 +25,7 @@ public class Account implements Serializable {
   //Default values Constructor
   public Account() {
     super();
+    this.status=Status.PENDING;
     UUID uuid = UUID.randomUUID();
     this.accountNumber = uuid.toString();
     this.balance = 0.00;
@@ -78,16 +79,17 @@ public class Account implements Serializable {
   }
 
   public void setStatus(Admin status) {
-    System.out.println("Current Status: "+ this.status+"Change? Y?");
+    System.out.println("Current Status: "+ this.status+"Change? Y/N?");
 
   }
 
   //Actions
-  public Transaction CreateAccount(User user, double balance) throws Exception {
+  public void CreateAccount(User user, double balance) throws Exception {
     System.out.println(this.users);
     Account account= new Account(user,balance);
-    return new Transaction("Created new account: "+ account.getAccountNumber()+":\t"+account.toString());
-  }
+    accounts.put(account.accountNumber,account);
+    this.transactions.add(new Transaction("Created new account: "+ account.getAccountNumber()+":\t"+account.toString()));
+     }
 
   public Transaction RemoveUser(String requestor, String name) throws IOException {
     Transaction transaction;

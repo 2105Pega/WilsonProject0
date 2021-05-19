@@ -1,6 +1,6 @@
 package main.models;
 
-import main.models.sub.Admin;
+import main.models.Users.Admin;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,14 +15,14 @@ public class User implements Serializable {
   private String password;
   private int role;
   private HashMap<String, Account> accounts= new HashMap<>(); //List of accounts
-  private ArrayList<Transaction> transactions= new ArrayList<>();
-  private ArrayList<String[]> options= new ArrayList<>();
+  private final ArrayList<Transaction> transactions= new ArrayList<>();
+  private final ArrayList<String[]> options= new ArrayList<>();
   private double balance;
-  private static HashMap<String, User> users=new HashMap<>();
+  private static final HashMap<String, User> users=new HashMap<>();
 
   public User(){
     super();
-    User user= new Admin("JockAd","MASTER");
+    User user= new Admin("Shake","nBake");
   }
 
   public User(String username, String password, String name) {
@@ -84,23 +84,22 @@ public class User implements Serializable {
   }
 
   public Account getAccounts() throws IOException {
+    Account account= new Account();
     int x=1;
     ArrayList<String> list= new ArrayList<>();
     System.out.println("Which one?");
-    for (Map.Entry<String, Account> set : this.accounts.entrySet()) {
-      System.out.println("Account "+ x+": "+ this.accounts.get(set.getKey()).getAccountName()+",\t "+set.getKey()); x++; list.add(set.getKey());}
+    for (Map.Entry<String, Account> set : account.getAccounts().entrySet()) {
+      System.out.println("Account "+ x+": "+ account.getAccounts().get(set.getKey()).getAccountName()+",\t "+set.getKey()); x++; list.add(set.getKey());}
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     // Reading data using readLine
     String name =reader.readLine();
     int num= Integer.parseInt(name);
-    System.out.println(this.accounts.get(list.get(num-1)));
-    return this.accounts.get(list.get(num-1));
-  }
+    System.out.println(account.getAccounts().get(list.get(num-1)));
+    return account.getAccounts().get(list.get(num-1)); }
 
   public ArrayList<String[]> getOptions() {
     return options;
   }
-
 
   public String getTransactions() {
     return transactions.toString();
@@ -113,7 +112,6 @@ public class User implements Serializable {
   public double getBalance() {
     return balance;
   }
-
   public void setBalance(double balance) {
     this.balance = balance;
   }
@@ -132,11 +130,6 @@ public class User implements Serializable {
       '}';
   }
 
-  public  HashMap<String, User> getUsers(HashMap<String, User> Users) {
-    if (Users ==null){ Users= new HashMap<String, User>(); }
-    Users.putAll(users);
-    return users;
-  }
   public HashMap<String, User> getUsers() {
     return new HashMap<String, User>(users);
   }

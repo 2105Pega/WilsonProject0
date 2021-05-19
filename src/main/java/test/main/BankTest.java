@@ -10,7 +10,7 @@ public class BankTest {
   public static void main(String[] args) {
     HashMap<String, String[]> Players= new HashMap<>();
 
-    Players.put("Bob",{"Bob", "Wilson", "d"});
+  //  Players.put("Bob",{"Bob", "Wilson", "d"});
 
   }
 

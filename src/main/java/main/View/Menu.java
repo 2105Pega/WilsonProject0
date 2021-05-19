@@ -2,20 +2,19 @@ package main.View;
 
 import main.models.Account;
 import main.models.User;
-import main.models.sub.Admin;
-import main.models.sub.Employee;
+import main.models.Users.Admin;
+import main.models.Users.Employee;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Menu {
   public Menu(){
     super();
   }
     public User Loginscreen() throws Exception {
-    Services services=new Services();
+    Services services=new Services(); //------Services
       System.out.println("Welcome to E_QCoin, Please login");
       User user= new User("init", null);
       String input;
@@ -46,20 +45,20 @@ public class Menu {
     return user;
   }
 
-  public User UserActions(User user, String action){
+  public User UserActions(User user, String action) throws Exception {
     Account account= new Account();
     switch (action){
       case "1":
-        account.CreateAccount(user,null);
+        account.CreateAccount(user,3.50);
         break;
       case "2":
-        account.Withdrew(user,null);
+        account.Withdrew(user,3.50);
         break;
       case "3":
-        account.Deposit(user,null);
+        account.Deposit(user,3.50);
         break;
       case "4":
-      account.Transfer(user, null);
+      account.Transfer(user, 3.50);
       break;
       default:
         System.out.println("Smile!");
@@ -68,7 +67,7 @@ public class Menu {
     return user;
   }
 
-  public Employee EmployeeActions(Employee user, String action ){
+  public Employee EmployeeActions(Employee user, String action ) throws IOException {
     Account account= new Account();
     switch (action){
       case "1":

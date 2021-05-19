@@ -14,25 +14,25 @@ public class Services {
     Menu menu= new Menu();
     HashMap<String, User> users= user.getUsers();
     String[] session;
-    do {
+    do {   //get user and password
       if (counter==1) { System.out.println("Please enter username [space] followed by your password");}
       else{ System.out.println("Please enter correct combination of: username [space] password"); }
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
       String input = reader.readLine();
       session=input.split(" ");
-
+      //OR create new Account and reset^
       if (input.equals("New Account")){ user=NewAccountServices(user);}
+      else if (counter==7){menu.Loginscreen();}
       else if (!users.containsKey(session[0])){
         System.out.println("User \""+session[0]+ "\" doesn't exist, please try again or enter \"New Account\" to create New account.\nMax 7 attempts, current="+ counter);
       }else if (counter>=3 && users.containsKey(session[0])){
         System.out.println("It seems your password is incorrect. Max 7 attempts, current= "+ counter);
-      } else if (counter==7){menu.Loginscreen();}
-      else {
-        System.out.println("Something");
+      } else {
+        System.out.println("Something something...");
         break;
-      }
-      counter++;
+      } counter++;
     } while (!(users.containsKey(session[0]) && users.get(session[0]).getPassword().equals(session[1])));
+
     user=new User(session[0],session[1]);
     return user; //Return User
   }
