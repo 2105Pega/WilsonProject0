@@ -24,21 +24,26 @@ Requirements:
   ●	Logging should be accomplished using Log4J
     o	All transactions should be logged
 
+PROJECT STARTS AT TELLER CLASS
 ---Structure
 
-Models 
-User,Bank Accounts, Transactions
-User=Name,Username, pwd, Role, Balance, ListofTransactions
-BankAccounts=Users, Accounts Balance,
-Transactions=Time, actions, amount
+XModels 
+XUser,Bank Accounts, Transactions
+XUser=Name,Username, pwd, Role, Balance, ListofTransactions
+XBankAccounts=Users, Accounts Balance,
+XTransactions=Time, actions, amount
 
 ---Login Screen!
-1. Login prompt
-2. Enter user, does user exist?
-3. Enter password, is that correct password?
-   4.Create new user(Optional)
+X1. Login prompt
+X2. Enter user, does user exist?
+X3. Enter password, is that correct password?
+X   4.Create new user(Optional)
 -----Welcome!
-1. Show actions.
+X1. Show actions.
   if Customer: Withdraw, Deposit,Transfers 
    If Employee: main.View details
    If Bank admin: main.View and edit
+----Finalizing
+1   Validation and Junit testing
+2   Method recalibrations & logging
+3   100 Completion
