@@ -1,52 +1,34 @@
-package models;
+package main.View;
 
 
-import main.View.Menu;
 import main.models.Account;
 import main.models.Transaction;
 import main.models.User;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.util.HashMap;
 
 public class Teller {
+  static Logger log = Logger.getLogger(Teller.class);
+  private Menu menu= new Menu();
 
-  public static void main(String[] args) throws Exception {
+  public  static void main(String[] args) throws Exception {
     HashMap<String, User> users = new HashMap<>();
-    HashMap<String, Account> accounts = new HashMap<>();
+    HashMap<Integer, Account> accounts = new HashMap<>();
     HashMap<String, Transaction> transactions = new HashMap<>();
-    HashMap<String, String> ops= new HashMap<>();
-    Integer counter=1;
-    ArrayList<Integer> counters = new ArrayList<>();
-    String input;
-    //Create and add user
-    //Create (User
+
+    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties"); }
+    catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
+
     User user = new Menu().Loginscreen(); //----To Menu for user instance
-    users.put(user.getUsername(), user);
+    String action=new Menu().DisplayOptions(user,0);//--Show options
+    new Menu().UserMenu(user, action);
 
-    System.out.println(user);
-    System.out.println("Welcome "+user.getUsername() +" How can we help you today?");
-    for (String option:user.getOptions().get(0)){
-      System.out.println(counter+"\t"+option);
-      ops.put(counter.toString(), option);
-      counters.add(counter);
-      counter++; } //Show Menu Options
-
-    while (true) {
-      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-      input = reader.readLine();
-      if (ops.containsKey(input)) {
-            Menu usermenu= new Menu();
-            usermenu.UserMenu(user, input);
-      } else {
-        System.out.println("Please choice from above options");
-      }
-      System.out.println("DONE");
-
-
-      Account account = user.getAccounts();
-      accounts.put(account.getAccountNumber(), account);
+      //Account account = user.getAccountz();
+      //accounts.put(account.getAccountNumber(), account);
 
       try {
         byte[] Account = accounts.toString().getBytes();
@@ -58,7 +40,7 @@ public class Teller {
         boutuser.flush();
       } catch (Exception e) {
         System.out.println("Nope! " + e);
-      } } }}
+      } } }
 /*
   protected String NewAccountServices() throws IOException {
     String name=null,username=null,password=null, message= null;

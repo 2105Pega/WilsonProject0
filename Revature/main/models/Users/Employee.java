@@ -7,18 +7,17 @@ import java.io.IOException;
 import java.util.Map;
 
 public class Employee extends User {
-
-  public Employee(String username, String password){
-    super(username, password);
-    this.setRole(2);
+  public Employee(String username, String password, String name){
+    super(username, password, name);
   }
+
   public void ViewCustomers(){
     for (Map.Entry<String, User> set : this.getUsers().entrySet()) {
       System.out.println("User "+": "+ (set.getKey()+",\t "+set));};
   };
   public void ViewApplications() throws IOException {
     Account account= new Account();
-    for (Map.Entry<String, Account> set : account.getAccounts().entrySet()) {
+    for (Map.Entry<Integer, Account> set : account.getAccounts().entrySet()) {
       System.out.println("User "+": "+ (set.getKey()+",\t "+set));};
   };
   }

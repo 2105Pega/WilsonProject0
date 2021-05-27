@@ -1,6 +1,9 @@
-package main.View;
+package main.service;
 
+import main.View.Menu;
 import main.models.User;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,8 +11,10 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class Services {
+  static Logger logger = Logger.getLogger(Services.class);
   private static int counter=1;
   public Services(){}
+
   public User AccountServices(User user) throws Exception{
     Menu menu= new Menu();
     HashMap<String, User> users= user.getUsers();
@@ -37,7 +42,10 @@ public class Services {
     return user; //Return User
   }
 
-  User NewAccountServices(User user) throws IOException {
+  public User NewAccountServices(User user) throws IOException {
+    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties"); }
+    catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");}
+
     HashMap<String, User> users= user.getUsers();
     String username=" ", password = " ";
     do {
@@ -58,8 +66,6 @@ public class Services {
     }while(password.length()<5);
 
     user= new User(username,password);
-    System.out.println(user.getUsers());
+    logger.info("\nNew List of Users:\n"+user.printUsers());
     return user;
-  }
-
-}
+  }}

@@ -5,17 +5,33 @@ import main.models.Users.Admin;
 import org.junit.Test;
 
 import java.awt.*;
-import java.util.Scanner;
+import java.io.IOException;
 
-import static org.testng.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
-public class MenuTests {
-  static Scanner scan = new Scanner(System.in);
+public class MenuTesting {
+
   private final Menu mini= new Menu();
 
-  public static class UserExperience extends MenuTests {
-    public UserExperience() {
+  public static void main(String[] args) throws IOException {
     }
+
+  public static class UserExperience extends MenuTesting {
+    public UserExperience(){}
+
+    @Test
+    public void us() throws IOException {
+
+    }
+    /*
+    while(true){
+        try {
+          System.out.println(Message);
+          deposit=Double.parseDouble(input.trim()); break;
+        } catch (Exception e){e.printStackTrace();
+          System.out.println("Please enter in $$ or \"00.00\" format"); }
+          input=scan.nextLine();
+      }*/
 
     @Test
     public void getUserX() {
@@ -26,7 +42,7 @@ public class MenuTests {
       System.out.println("Test User is \"" + input + "\"");
     }}
 
-    public static class EmployeeExperience extends MenuTests {
+    public static class EmployeeExperience extends MenuTesting {
     public EmployeeExperience(){}
     @Test
     public void getEmplUser(){
@@ -38,7 +54,7 @@ public class MenuTests {
     }
   }
 
-  public static class AdminExperience extends MenuTests {
+  public static class AdminExperience extends MenuTesting {
     public AdminExperience(){}
     @Test
     public void getAdminUser(){

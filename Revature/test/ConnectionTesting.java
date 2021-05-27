@@ -1,15 +1,19 @@
 package test;
 
+import main.models.User;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.io.InputStreamReader;
+import java.sql.*;
+import java.util.Arrays;
 import java.util.Properties;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class ConnectionTesting {
@@ -43,37 +47,45 @@ public class ConnectionTesting {
     return pwd;
   }
 
-  public Connection getConnection() throws SQLException {
-    String jdbcUrl = null, password, dbName, hostname, port;
+  public Connection getConnection(String dbName) throws SQLException {
+    try {
+      PropertyConfigurator.configure("Revature/resources/log4jtest.properties");
+    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
+    String jdbcUrl = null, password, hostname, port;
     Properties prop = new Properties();
     try {
       Class.forName("org.postgresql.Driver");
     } catch (Exception e) {
       e.printStackTrace();
     }
-    try {
-      FileInputStream stream = new FileInputStream("/Users/quese/Git/WilsonProject0/Revature/resources/aws.properties");
+    if (dbName==null){dbName = prop.getProperty("DB_NAME");}
+
+      try {
+      FileInputStream stream = new FileInputStream("/Users/quese/Git/WilsonProject0/Revature/resources/properties/aws.properties");
       prop.load(stream);
       username = prop.getProperty("USER");
       password = prop.getProperty("PWD");
-      dbName = prop.getProperty("DB_NAME");
       hostname = prop.getProperty("RDS_HOSTNAME");
       port = prop.getProperty("RDS_PORT");
       jdbcUrl = "jdbc:postgresql://" + hostname + ":" +
         port + "/" + dbName + "?user=" + username + "&password=" + password;
-      logger.info("\nProp.URL=" + url + "\nProp.PWD=" + pwd);
     } catch (IOException io) {
       io.printStackTrace();
     }
+    logger.info("Testing JDBC Connection: "+ jdbcUrl);assert jdbcUrl != null;
     return DriverManager.getConnection(jdbcUrl);
   }
 
   @Test
-  public void TestConnection() throws ClassNotFoundException, SQLException {
-    Connection conn = getConnection();
-    System.out.println(this.url);
+  public void TestConnection() throws ClassNotFoundException, SQLException, IOException {
+    String db;
+    Connection conn = getConnection(null);
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Which Database would you like to test? default= eqbank");
+    db=reader.readLine();
+
     try {
-      conn = getConnection();
+      conn = getConnection(db);
       if (conn != null) {
         System.out.println("Connection Success!");
       } else {
@@ -86,6 +98,36 @@ public class ConnectionTesting {
       e2.printStackTrace();
     }
     assertTrue(conn != null);
-  }}
+  }
+
+  @Test
+  public void CreateUser() throws SQLException, IOException {
+    try {
+      PropertyConfigurator.configure("Revature/resources/log4jtest.properties");
+    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
+    String insert, update, sql;
+    User TesterX = new User("Testx", "xxxxx", "Power to the Users!");
+    logger.info("TestX Profile:\n"+TesterX.printUsers());
+    Connection connection=getConnection("eqbank");
+    insert=("INSERT INTO users (userid, username,NAME,password,account1, accounts, role) values ("+TesterX.getUserid()+",'"+TesterX.getUsername()+"','"+TesterX.getName()+"', '"+TesterX.getPassword()+"',"+null+","+ Arrays.toString(TesterX.getAccountz()) +", '"+TesterX.getRole()+"');");
+    update="update users SET accounts="+ Arrays.toString(TesterX.getAccountz()) +" WHERE username='"+TesterX.getUsername()+"';";
+    Statement stmt=null;
+
+    //Run SQL Query
+    try {
+      connection= getConnection("eqbank");
+      stmt=connection.createStatement();
+      int result=stmt.executeUpdate(insert);
+      System.out.println(result);
+    } catch (Exception e){e.printStackTrace();}
+    finally {
+      assert stmt != null;
+      stmt.close();
+      connection.close();
+    }
+    System.out.println("Success!");
+    assertNotNull(connection);
+  }
+}
 
 

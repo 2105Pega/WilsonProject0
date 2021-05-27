@@ -1,0 +1,100 @@
+
+2021-05-23 20:17:27,596 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:00:11,612 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:01:05,176 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Shake = User{Userid=640088760, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+Free = User{Userid=989461098, username='Free', name='null', password='Slave', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@3ac42916], balance=0.0}
+
+2021-05-25 11:01:05,178 - main.models.Teller -INFO - User Freehas logged in.
+2021-05-25 11:01:15,629 - main.models.Account -INFO - New List of Users:
+---------------------------------
+1823684867 = Account{accountName='Account 0', users={Free=null}, transactions=[Transaction{timestamp=11:01:15, log='Account: 1823684867 created.'}], accountNumber='1823684867', balance=3.5}
+
+2021-05-25 11:06:06,539 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:06:20,364 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Shake = User{Userid=661011645, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+Jw = User{Userid=474813968, username='Jw', name='null', password='Wearr', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@2d6a9952], balance=0.0}
+
+2021-05-25 11:06:20,370 - main.models.Teller -INFO - User Jwhas logged in.
+2021-05-25 11:15:04,617 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:15:15,050 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Shake = User{Userid=1764865835, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+Jw = User{Userid=2019576662, username='Jw', name='null', password='Jawer', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@2d6a9952], balance=0.0}
+
+2021-05-25 11:15:15,053 - main.models.Teller -INFO - User Jwhas logged in.
+2021-05-25 11:16:17,002 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:16:26,302 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Jaeq = User{Userid=154669539, username='Jaeq', name='null', password='Dawew', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@2d6a9952], balance=0.0}
+Shake = User{Userid=727851269, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+
+2021-05-25 11:16:26,306 - main.models.Teller -INFO - User Jaeqhas logged in.
+2021-05-25 11:16:28,808 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+
+2021-05-25 11:16:43,078 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+
+2021-05-25 11:16:57,612 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:17:07,181 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Jaeq = User{Userid=364319023, username='Jaeq', name='null', password='Quese', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@2d6a9952], balance=0.0}
+Shake = User{Userid=484814521, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+
+2021-05-25 11:17:07,185 - main.models.Teller -INFO - User Jaeqhas logged in.
+2021-05-25 11:19:50,821 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:59:00,041 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 11:59:13,642 - main.service.Services -INFO -
+New List of Users:
+---------------------------------
+Jaw = User{Userid=1177721343, username='Jaw', name='null', password='Jawer', role='CUSTOMER', accounts=null, transactions=[], options=[[Ljava.lang.String;@2d6a9952], balance=0.0}
+Shake = User{Userid=866004606, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[], options=[], balance=0.0}
+
+2021-05-25 11:59:13,651 - main.View.Menu -INFO - User Jaw has logged in.
+2021-05-25 11:59:28,227 - main.models.Account -INFO - New List of Users:
+---------------------------------
+1353992050 = Account{accountName='Account 0', users={yes=null}, transactions=[Transaction{timestamp=11:59:28, log='Account: 1353992050 created.'}], accountNumber='1353992050', balance=3.5}
+
+2021-05-25 11:59:28,228 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+1353992050 = Account{accountName='Account 0', users={yes=null}, transactions=[Transaction{timestamp=11:59:28, log='Account: 1353992050 created.'}], accountNumber='1353992050', balance=3.5}
+
+2021-05-25 12:21:26,965 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-25 12:43:21,093 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-26 01:33:49,935 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+790895797 = Account{accountName='fun', accountNumber=790895797, users={Bob=User{Userid=582564866, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=[I@deb6432, transactions=[]}}, transactions=[Transaction{timestamp=01:33:45, log='Account: 790895797 created.'}], balance=32.0, status='PENDING'}
+
+2021-05-26 01:33:49,942 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+790895797 = Account{accountName='fun', accountNumber=790895797, users={Bob=User{Userid=582564866, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=[I@deb6432, transactions=[]}}, transactions=[Transaction{timestamp=01:33:45, log='Account: 790895797 created.'}], balance=32.0, status='PENDING'}
+
+2021-05-26 01:33:59,422 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+790895797 = Account{accountName='fun', accountNumber=790895797, users={Bob=User{Userid=582564866, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=[I@deb6432, transactions=[]}}, transactions=[Transaction{timestamp=01:33:45, log='Account: 790895797 created.'}], balance=32.0, status='PENDING'}
+
+2021-05-26 01:33:59,423 - main.models.Account -INFO - Printing accounts as Hashmap
+ ---------------------------------
+790895797 = Account{accountName='fun', accountNumber=790895797, users={Bob=User{Userid=582564866, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=[I@deb6432, transactions=[]}}, transactions=[Transaction{timestamp=01:33:45, log='Account: 790895797 created.'}], balance=32.0, status='PENDING'}
+
+2021-05-26 11:20:29,323 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-26 11:21:13,781 - main.View.Menu -INFO - User Shake has logged in.
+2021-05-26 11:30:28,451 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-26 11:30:56,067 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-26 11:31:06,387 - main.View.Menu -INFO - User Shake has logged in.
+2021-05-26 11:36:18,255 - main.View.Menu -INFO - Created Admin User "Shake", LEGGO!
+2021-05-26 11:37:05,654 - main.service.Services -INFO - 
+New List of Users:
+---------------------------------
+Shake = User{Userid=1696204353, username='Shake', name='J. Wilson', password='nBake', role='ADMIN', accounts=null, transactions=[]}
+Bubba = User{Userid=1833372047, username='Bubba', name='null', password='meh54', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-26 11:37:05,657 - main.View.Menu -INFO - User Bubba has logged in.
