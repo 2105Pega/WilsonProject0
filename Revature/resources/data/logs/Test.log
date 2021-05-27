@@ -119,3 +119,11 @@ Testx = User{Userid=1661078385, username='Testx', name='Power to the Users!', pa
 ---------------------------------
 Bob = User{Userid=870004288, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
 
+2021-05-27 09:57:26,441 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:57:28,265 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:03,669 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:07,380 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:08,000 - main.dao.UserDAOImpl -INFO - Success
+2021-05-27 13:08:33,299 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:08:35,350 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:08:35,894 - main.dao.UserDAOImpl -INFO - Success
