@@ -22,6 +22,34 @@ public class ConnectionTesting {
   private String username;
   private String pwd;
 
+  public Connection getConnection(String dbName) throws SQLException {
+    try {
+      PropertyConfigurator.configure("Revature/resources/log4jtest.properties");
+    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
+    String jdbcUrl = null, password, hostname, port;
+    Properties prop = new Properties();
+    try {
+      Class.forName("org.postgresql.Driver");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    if (dbName==null){dbName = prop.getProperty("DB_NAME");}
+
+    try {
+      FileInputStream stream = new FileInputStream("/Users/quese/Git/WilsonProject0/Revature/resources/properties/aws.properties");
+      prop.load(stream);
+      username = prop.getProperty("USER");
+      password = prop.getProperty("PWD");
+      hostname = prop.getProperty("RDS_HOSTNAME");
+      port = prop.getProperty("RDS_PORT");
+      jdbcUrl = "jdbc:postgresql://" + hostname + ":" +
+        port + "/" + dbName + "?user=" + username + "&password=" + password;
+    } catch (IOException io) {
+      io.printStackTrace();
+    }
+    logger.info("Testing JDBC Connection: "+ jdbcUrl);assert jdbcUrl != null;
+    return DriverManager.getConnection(jdbcUrl);
+  }
   public String[] getProps() {
     Properties prop = new Properties();
     try {
@@ -45,35 +73,6 @@ public class ConnectionTesting {
 
   public String getPwd() {
     return pwd;
-  }
-
-  public Connection getConnection(String dbName) throws SQLException {
-    try {
-      PropertyConfigurator.configure("Revature/resources/log4jtest.properties");
-    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
-    String jdbcUrl = null, password, hostname, port;
-    Properties prop = new Properties();
-    try {
-      Class.forName("org.postgresql.Driver");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    if (dbName==null){dbName = prop.getProperty("DB_NAME");}
-
-      try {
-      FileInputStream stream = new FileInputStream("/Users/quese/Git/WilsonProject0/Revature/resources/properties/aws.properties");
-      prop.load(stream);
-      username = prop.getProperty("USER");
-      password = prop.getProperty("PWD");
-      hostname = prop.getProperty("RDS_HOSTNAME");
-      port = prop.getProperty("RDS_PORT");
-      jdbcUrl = "jdbc:postgresql://" + hostname + ":" +
-        port + "/" + dbName + "?user=" + username + "&password=" + password;
-    } catch (IOException io) {
-      io.printStackTrace();
-    }
-    logger.info("Testing JDBC Connection: "+ jdbcUrl);assert jdbcUrl != null;
-    return DriverManager.getConnection(jdbcUrl);
   }
 
   @Test

@@ -113,3 +113,9 @@ Testx = User{Userid=1661078385, username='Testx', name='Power to the Users!', pa
 2021-05-26 11:35:58,859 - test.ConnectionTesting -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
 2021-05-26 11:37:47,018 - main.models.Account -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
 2021-05-26 11:37:48,097 - main.models.Account -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:06:21,800 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:06:23,618 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:06:24,171 - main.dao.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob = User{Userid=870004288, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
