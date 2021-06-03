@@ -106,6 +106,30 @@ public class UserDAOImpl implements UserDAO {
     count=0;
     return instList;
   }
+
+  @Override
+  public List<User> selectUser(int user) throws SQLException {
+    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties"); }
+    catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;} logger.setLevel(Level.WARN);
+
+    List<User> instList=new ArrayList<User>();
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+    try{
+      sql="SELECT * FROM USERS WHERE userid="+user+";";
+      stmt=connection.createStatement( ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+      ResultSet rs=stmt.executeQuery(sql);
+      instList=null;
+      instList=iterateDB(rs); }
+    catch (Exception e){e.printStackTrace();}
+    finally {
+      assert stmt != null;
+      stmt.close();
+      connection.close(); }
+    logger.info("Success");
+    count=0;
+    return instList;
+  }
   @Override
   public List<User> selectAllUsers() throws SQLException {
     List<User> instList=new ArrayList<User>();

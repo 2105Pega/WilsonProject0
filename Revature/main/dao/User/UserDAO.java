@@ -13,6 +13,7 @@ public interface UserDAO {
 
   ///READ DATABASE
   List<User> selectUser(String username) throws SQLException;
+  List<User> selectUser(int user) throws SQLException;
   List<User> selectAllUsers() throws SQLException;
   List<User> iterateDB(ResultSet resultSet) throws SQLException;
 
