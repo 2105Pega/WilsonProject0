@@ -1,12 +1,9 @@
 package main.models.Users;
 
-import main.models.Account;
 import main.models.User;
 
-import java.io.IOException;
-import java.util.Map;
-
 public class Employee extends User {
+  /*
   public Employee(String username, String password, String name){
     super(username, password, name);
   }
@@ -20,4 +17,6 @@ public class Employee extends User {
     for (Map.Entry<Integer, Account> set : account.getAccounts().entrySet()) {
       System.out.println("User "+": "+ (set.getKey()+",\t "+set));};
   };
+
+   */
   }

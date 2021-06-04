@@ -1,16 +1,7 @@
 package test;
 
-import main.models.User;
-import main.models.Users.Admin;
-import org.junit.Test;
-
-import java.awt.*;
-import java.io.IOException;
-
-import static org.junit.Assert.assertTrue;
-
 public class MenuTesting {
-
+/*
   private final Menu mini= new Menu();
 
   public static void main(String[] args) throws IOException {
@@ -23,7 +14,7 @@ public class MenuTesting {
     public void us() throws IOException {
 
     }
-    /*
+
     while(true){
         try {
           System.out.println(Message);
@@ -31,7 +22,7 @@ public class MenuTesting {
         } catch (Exception e){e.printStackTrace();
           System.out.println("Please enter in $$ or \"00.00\" format"); }
           input=scan.nextLine();
-      }*/
+      }
 
     @Test
     public void getUserX() {
@@ -64,4 +55,6 @@ public class MenuTesting {
     assertTrue(input.length()>0);
     System.out.println("Test User is \""+input+"\"");
   }}
+
+ */
 }

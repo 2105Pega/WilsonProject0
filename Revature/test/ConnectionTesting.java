@@ -1,6 +1,5 @@
 package test;
 
-import main.models.User;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
@@ -9,11 +8,11 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.*;
-import java.util.Arrays;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class ConnectionTesting {
@@ -99,14 +98,16 @@ public class ConnectionTesting {
     assertTrue(conn != null);
   }
 
+  /*
   @Test
   public void CreateUser() throws SQLException, IOException {
+
     try {
       PropertyConfigurator.configure("Revature/resources/log4jtest.properties");
     } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}
     String insert, update, sql;
-    User TesterX = new User("Testx", "xxxxx", "Power to the Users!");
-    logger.info("TestX Profile:\n"+TesterX.printUsers());
+    //User TesterX = new User("Testx", "xxxxx", "Power to the Users!");
+    //logger.info("TestX Profile:\n"+TesterX.printUsers());
     Connection connection=getConnection("eqbank");
     insert=("INSERT INTO users (userid, username,NAME,password,account1, accounts, role) values ("+TesterX.getUserid()+",'"+TesterX.getUsername()+"','"+TesterX.getName()+"', '"+TesterX.getPassword()+"',"+null+","+ Arrays.toString(TesterX.getAccountz()) +", '"+TesterX.getRole()+"');");
     update="update users SET accounts="+ Arrays.toString(TesterX.getAccountz()) +" WHERE username='"+TesterX.getUsername()+"';";
@@ -127,6 +128,8 @@ public class ConnectionTesting {
     System.out.println("Success!");
     assertNotNull(connection);
   }
+
+   */
 }
 
 

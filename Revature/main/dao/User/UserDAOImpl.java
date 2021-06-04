@@ -53,7 +53,6 @@ public class UserDAOImpl implements UserDAO {
 
   public static void main(String[] args) throws SQLException {
     UserDAOImpl dao = new UserDAOImpl();
-    //System.out.println( dao.selectUser("Bob"));
     System.out.println(dao.selectAllUsers());
   }
 
@@ -106,7 +105,6 @@ public class UserDAOImpl implements UserDAO {
     count=0;
     return instList;
   }
-
   @Override
   public List<User> selectUser(int user) throws SQLException {
     try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties"); }
@@ -264,6 +262,7 @@ public class UserDAOImpl implements UserDAO {
     }
   }
   protected void garage(){
+    //System.out.println( dao.selectUser("Bob"));
     //User Bob= new User("Bob1", "pwd1234");
     // User Jock=new Admin("Jock1","wellya","Admin Rogers!");
     // User Bob= new User("Bob6", "pwd1234");

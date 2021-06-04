@@ -1,21 +1,19 @@
 package main.service;
 
-import main.View.Menu;
 import main.models.User;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
 
 public class Services {
   static Logger logger = Logger.getLogger(Services.class);
   private static int counter=1;
   public Services(){}
 
-  public User AccountServices(User user) throws Exception{
+  public static void main(String[] args) {
+
+  }
+
+  public User AccountServices(User user) throws Exception {
+    /*
     Menu menu= new Menu();
     HashMap<String, User> users= user.getUsers();
     String[] session;
@@ -68,4 +66,8 @@ public class Services {
     user= new User(username,password);
     logger.info("\nNew List of Users:\n"+user.printUsers());
     return user;
-  }}
+  }
+  */
+    return null;
+  }
+}

@@ -1,23 +1,8 @@
 package main.View;
 
 
-import main.models.Account;
-import main.models.Transaction;
-import main.models.User;
-import main.models.Users.Admin;
-import main.models.Users.Employee;
-import main.service.Services;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-
 public class Menu {
+  /*
   static Logger logger = Logger.getLogger(Menu.class);
 
   public static void main(String[] args) throws Exception {
@@ -172,4 +157,6 @@ public class Menu {
     //public void Actions(User user){
     //user.getRole()
    // }
+
+   */
 }

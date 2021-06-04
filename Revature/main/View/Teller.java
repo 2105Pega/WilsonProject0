@@ -1,17 +1,8 @@
 package main.View;
 
 
-import main.models.Account;
-import main.models.Transaction;
-import main.models.User;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.util.HashMap;
-
 public class Teller {
+  /*
   static Logger log = Logger.getLogger(Teller.class);
   private Menu menu= new Menu();
 
@@ -92,3 +83,4 @@ public class Teller {
 
     return session[0]; //Return User
   } */
+}
