@@ -3,6 +3,7 @@ package main.dao.Account;
 import main.dao.User.UserDAOImpl;
 import main.models.Account;
 import main.models.User;
+import org.apache.commons.math3.util.Precision;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -57,28 +58,29 @@ public class AccountDAOImpl implements AccountDAO {
     return DriverManager.getConnection(jdbcUrl);
   }
 
-  public AccountDAOImpl(){
-    users= new ArrayList<User>();
-    //User Bob= new User("Bob", "pwd1237");
-   // User Jock=new Admin("Jock1","wellya","Admin Rogers!");
-   // users.add(Bob);
-  }
+  public AccountDAOImpl(){ users= new ArrayList<User>(); }
 
-  public static void main(String[] args) throws SQLException {
-    AccountDAOImpl ao = new AccountDAOImpl();
-    UserDAOImpl uo= new UserDAOImpl();
-
+  protected void trunk(){
+     //User Bob= new User("Bob", "pwd1237");
+    // User Jock=new Admin("Jock1","wellya","Admin Rogers!");
+    // users.add(Bob);
     //User First= uo.selectAllUsers().get(0);
     //First.setUserid(1069209503);
-   // User bob=dao.users.get(0);
+    // User bob=dao.users.get(0);
     //dao.updateUser(bob);
     //ao.createAccount(First);
 
-  // ao.createAccount(First);
-   ao.ApproveAccount(1649573132, true);
+    // ao.createAccount(First);
+    // ao.ApproveAccount(1649573132, true);
     //ao.selectAccountPending();
-   // ao.depositAmount(1649573132,3.50);
-  //  ao.withdrawAmount(1649573132, 5.07);
+    //ao.depositAmount(1649573132,3500);
+    //ao.depositAmount(1521091488,6000);
+    //  ao.withdrawAmount(1649573132, 5.07);
+  }
+  public static void main(String[] args) throws SQLException {
+    AccountDAOImpl ao = new AccountDAOImpl();
+    UserDAOImpl uo= new UserDAOImpl();
+    ao.transferAmount(1521091488, 8110,1649573132);
   }
 
   ///CREATE ACCOUNT
@@ -205,7 +207,7 @@ public class AccountDAOImpl implements AccountDAO {
   }
 
   //UPDATE ACCOUNTS
-  @Override // APPROVE ACCOUNT
+  @Override // APPROVE/EDIT ACCOUNT
   public List<Account> ApproveAccount(int acc, boolean status) throws SQLException {
     String message="'PENDING'";
     switch (status+"..."){
@@ -243,7 +245,133 @@ public class AccountDAOImpl implements AccountDAO {
     // logger.info("New User updated successfully:\n"+user.printUsers());
     return instList;
   }
-  @Override //ADD NEW USER TO ACCOUNT
+  @Override //DEPOSITS
+  public boolean depositAmount(int account, double balance) throws SQLException {
+    double roundedbalance = Precision.round(balance,2);
+    Account reciever=selectAccountbyid(account).get(0);
+    Scanner scanner= new Scanner(System.in);
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+
+    while (true){
+      System.out.println("How much to deposit?");
+    if (roundedbalance==0){
+      try { roundedbalance=scanner.nextDouble(); }
+        catch (Exception e){ System.out.println("Amount is not cash value,please try again."); } }
+      else if(roundedbalance<0){
+      System.out.println("Anything higher than Zero");
+    }
+      else { reciever.setBalance(roundedbalance+reciever.getBalance());
+
+      try {
+        update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
+        connection= getConnection("eqbank");
+        stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+        connection.setAutoCommit(false);
+        stmt.addBatch(update);
+        stmt.executeBatch();
+        connection.commit();
+        selectAccountbyid(reciever.getAccountNumber());}
+      catch (Exception e){e.printStackTrace();}
+      finally {
+        assert stmt != null;
+        stmt.close();
+        connection.close(); }
+      return true;} }
+    }
+  @Override //WITHDRAWALS
+  public boolean withdrawAmount(int account, double balance) throws SQLException {
+    double roundedbalance = Precision.round(balance,2);
+    Account reciever=selectAccountbyid(account).get(0);
+    Scanner scanner= new Scanner(System.in);
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+    System.out.println("How much to Withdraw?");
+    boolean available=!(reciever.getBalance() >= roundedbalance);
+    while (true) {
+      if (balance == 0 && available) { System.out.println("How much?");
+        try { roundedbalance = scanner.nextDouble();
+        } catch (Exception e) { logger.error(e.toString());
+          System.out.println("Amount is not cash value. Try again.");
+          }
+      } else if (roundedbalance < 0 && available) {
+        System.out.println("Anything higher than Zero.");
+        try { balance = scanner.nextDouble();
+        } catch (Exception e) { logger.error(e.toString());
+          System.out.println("Amount is not cash value. Try again."); }
+      } else if(roundedbalance>reciever.getBalance()){
+        System.out.println("Sorry Boss, only "+ reciever.getBalance() + " available. Try again.");
+        try { roundedbalance = scanner.nextDouble(); }
+        catch (Exception e) {
+          System.out.println("Amount is not cash value. Try again."); }
+      }
+      else if (reciever.getBalance() >= roundedbalance) { reciever.setBalance(reciever.getBalance() - roundedbalance);
+        try { update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
+          connection= getConnection("eqbank");
+          stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+          connection.setAutoCommit(false);
+          stmt.addBatch(update);
+          stmt.executeBatch();
+          connection.commit();
+          selectAccountbyid(reciever.getAccountNumber());}
+        catch (Exception e){e.printStackTrace();}
+        finally {
+          assert stmt != null;
+          stmt.close();
+          connection.close(); }
+        return true;
+      } else {
+        return false; } }
+  }
+  @Override //TRANSFERS
+  public boolean transferAmount(int account, double balance, int account2) throws SQLException {
+    double roundedbalance = Precision.round(balance,2);
+    Account reciever=selectAccountbyid(account).get(0);
+    Account destination=selectAccountbyid(account2).get(0);
+    Scanner scanner= new Scanner(System.in);
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+
+      boolean available=!(reciever.getBalance() >= roundedbalance);
+      while (true) {
+        if (balance == 0 && available) { System.out.println("How much?");
+          try { roundedbalance = scanner.nextDouble();
+          } catch (Exception e) { logger.error(e.toString());
+            System.out.println("Amount is not cash value. Try again."); }
+        } else if (roundedbalance < 0 && available) {
+          System.out.println("Anything higher than Zero.");
+          try { balance = scanner.nextDouble();
+          } catch (Exception e) { logger.error(e.toString());
+            System.out.println("Amount is not cash value. Try again."); }
+        } else if(roundedbalance>reciever.getBalance()){
+          System.out.println("Sorry Boss, only "+ reciever.getBalance() + " available. Try again.");
+          try { roundedbalance = scanner.nextDouble(); }
+          catch (Exception e) {
+            System.out.println("Amount is not cash value. Try again."); }
+        }
+        else if (reciever.getBalance() >= roundedbalance) {
+          reciever.setBalance(reciever.getBalance() - roundedbalance);
+          destination.setBalance(destination.getBalance() + roundedbalance);
+          try {
+            update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
+            sql="update accounts SET balance="+destination.getBalance()+" WHERE accountid="+destination.getAccountNumber()+";";
+            connection= getConnection("eqbank");
+            stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            connection.setAutoCommit(false);
+            stmt.addBatch(update);
+            stmt.addBatch(sql);
+            stmt.executeBatch();
+            connection.commit();
+            selectAccountbyid(reciever.getAccountNumber());}
+          catch (Exception e){e.printStackTrace();}
+          finally {
+            assert stmt != null;
+            stmt.close();
+            connection.close(); }
+          return true;
+        } else {
+          return false; }} }
+  @Override //ADD NEW USER TO ACCOUNT - HELPER
   public List<Account> AddUser(int user, int account) throws SQLException {
     try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties");
     } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;} logger.setLevel(Level.WARN);
@@ -277,93 +405,32 @@ public class AccountDAOImpl implements AccountDAO {
     return instList;
   }
 
-  @Override
-  public boolean depositAmount(int account, double balance) throws SQLException {
-    Account reciever=selectAccountbyid(account).get(0);
-    Scanner scanner= new Scanner(System.in);
-    Connection connection=getConnection("eqbank");
-    Statement stmt=null;
-
-    while (true){
-      System.out.println("How much to deposit?");
-    if (balance==0){
-      try { balance=scanner.nextDouble(); }
-        catch (Exception e){ System.out.println("Amount is not cash value,please try again."); } }
-      else if(balance<0){
-      System.out.println("Anything higher than Zero");
-    }
-      else { reciever.setBalance(balance+reciever.getBalance());
-
-      try {
-        update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
-        connection= getConnection("eqbank");
-        stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-        connection.setAutoCommit(false);
-        stmt.addBatch(update);
-        stmt.executeBatch();
-        connection.commit();
-        selectAccountbyid(reciever.getAccountNumber());}
-      catch (Exception e){e.printStackTrace();}
-      finally {
-        assert stmt != null;
-        stmt.close();
-        connection.close(); }
-      return true;} }
-    }
-  @Override
-  public boolean withdrawAmount(int account, double balance) throws SQLException {
-    Account reciever=selectAccountbyid(account).get(0);
-    Scanner scanner= new Scanner(System.in);
-    Connection connection=getConnection("eqbank");
-    Statement stmt=null;
-    System.out.println("How much to Withdraw?");
-    boolean available=!(reciever.getBalance() >= balance);
-    while (true) {
-      if (balance == 0 && available) { System.out.println("How much?");
-        try { balance = scanner.nextDouble();
-        } catch (Exception e) { logger.error(e.toString());
-          System.out.println("Amount is not cash value. Try again.");
-          }
-      } else if (balance < 0 && available) {
-        System.out.println("Anything higher than Zero.");
-        try { balance = scanner.nextDouble();
-        } catch (Exception e) { logger.error(e.toString());
-          System.out.println("Amount is not cash value. Try again."); }
-      } else if(balance>reciever.getBalance()){
-        System.out.println("Sorry Boss, only "+ reciever.getBalance() + " available. Try again.");
-        try { balance = scanner.nextDouble(); }
-        catch (Exception e) {
-          System.out.println("Amount is not cash value. Try again."); }
-      }
-      else if (reciever.getBalance() >= balance) { reciever.setBalance(reciever.getBalance() - balance);
-        try { update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
-          connection= getConnection("eqbank");
-          stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-          connection.setAutoCommit(false);
-          stmt.addBatch(update);
-          stmt.executeBatch();
-          connection.commit();
-          selectAccountbyid(reciever.getAccountNumber());}
-        catch (Exception e){e.printStackTrace();}
-        finally {
-          assert stmt != null;
-          stmt.close();
-          connection.close(); }
-        return true;
-      } else {
-        return false; } }
-  }
-
-
-  @Override
-  public boolean transferAmount(Account account) throws SQLException {
-    return false;
-  }
-
   //DELETE
   @Override
-  public List<Account> deleteAccount(int id) throws SQLException {
-    return null;
+  public List<Account> cancelAccount(int id) throws SQLException {
+    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties");
+    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;}logger.setLevel(Level.WARN);
+
+    List<Account> instList=new ArrayList<Account>();
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+    try {
+      update="DELETE FROM accounts WHERE accountid="+id+";";
+      instList=null;
+      connection= getConnection("eqbank");
+      stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+      connection.setAutoCommit(false);
+      stmt.addBatch(update);
+      stmt.executeBatch();
+      connection.commit();
+      instList=selectAllAccounts();
+    } catch (Exception e){e.printStackTrace();}
+    finally {
+      assert stmt != null;
+      stmt.close();
+      connection.close(); }
+    //logger.info("New User updated successfully:\n"+use.printUsers());
+    return instList;
   }
 
   @Override
