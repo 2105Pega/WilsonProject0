@@ -75,10 +75,10 @@ public class AccountDAOImpl implements AccountDAO {
     //ao.createAccount(First);
 
   // ao.createAccount(First);
-   // ao.ApproveAccount(1649573132);
+   ao.ApproveAccount(1649573132, true);
     //ao.selectAccountPending();
    // ao.depositAmount(1649573132,3.50);
-    ao.withdrawAmount(1649573132, 5.07);
+  //  ao.withdrawAmount(1649573132, 5.07);
   }
 
   ///CREATE ACCOUNT
@@ -88,18 +88,17 @@ public class AccountDAOImpl implements AccountDAO {
     account.addUsers(user.getUserid());
     account.setName("SS"+ String.valueOf(user.getUserid()).charAt(0));
 
-    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties");
-    } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;} logger.setLevel(Level.WARN);
+    try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties"); }
+    catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;} logger.setLevel(Level.WARN);
     Connection connection=getConnection("eqbank");
     Statement stmt=null;
-
     insert=("INSERT INTO accounts (accountid, status, account, userids, name, balance) values ("+account.getAccountNumber()+",'"+account.getStatus()+"','"+account.getAccount()+"', '"+ account.getUsersSQL() +"','"+account.getName()+"',"+ account.getBalance() +");");
-    //Run SQL Query
-    try {
-      connection= getConnection("eqbank");
+
+    try { connection= getConnection("eqbank");
       stmt=connection.createStatement();
       int result=stmt.executeUpdate(insert);
-      System.out.println(result); } catch (Exception e){e.printStackTrace();}
+      System.out.println(result); }
+    catch (Exception e){e.printStackTrace();}
     finally {
       assert stmt != null;
       stmt.close();
@@ -204,9 +203,21 @@ public class AccountDAOImpl implements AccountDAO {
     count=0;
     return instList;
   }
+
   //UPDATE ACCOUNTS
-  @Override // SUCCESS
-  public List<Account> ApproveAccount(int acc) throws SQLException {
+  @Override // APPROVE ACCOUNT
+  public List<Account> ApproveAccount(int acc, boolean status) throws SQLException {
+    String message="'PENDING'";
+    switch (status+"..."){
+      case "true...":
+        message="'MEMBER'";
+        break;
+      case "false...":
+        message="'CLOSED'";
+        break;
+      default:
+        return null; }
+
     try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties");
     } catch (Exception e){e.printStackTrace(); System.out.println("Seems not found");;} logger.setLevel(Level.WARN);
     List<Account> instList=new ArrayList<Account>();
@@ -214,7 +225,7 @@ public class AccountDAOImpl implements AccountDAO {
     Statement stmt=null;
 
     try {
-      update="update accounts SET status='APPROVED' WHERE accountid="+acc+";";
+      update="update accounts SET status="+message+ "WHERE accountid="+acc+";";
       instList=null;
       connection= getConnection("eqbank");
       stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
@@ -232,7 +243,6 @@ public class AccountDAOImpl implements AccountDAO {
     // logger.info("New User updated successfully:\n"+user.printUsers());
     return instList;
   }
-
   @Override //ADD NEW USER TO ACCOUNT
   public List<Account> AddUser(int user, int account) throws SQLException {
     try { PropertyConfigurator.configure("Revature/resources/properties/log4j.properties");
@@ -300,7 +310,6 @@ public class AccountDAOImpl implements AccountDAO {
         connection.close(); }
       return true;} }
     }
-
   @Override
   public boolean withdrawAmount(int account, double balance) throws SQLException {
     Account reciever=selectAccountbyid(account).get(0);

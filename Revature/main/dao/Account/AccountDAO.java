@@ -27,7 +27,7 @@ public interface AccountDAO {
   //UPDATE FULL ROW
 
   //UPDATE ACCOUNTS
-  List<Account> ApproveAccount(int acc) throws SQLException;
+  List<Account> ApproveAccount(int acc, boolean status) throws SQLException;
   List<Account> AddUser (int user, int account) throws SQLException;
   boolean depositAmount(int account, double balance) throws SQLException;
   boolean withdrawAmount(int account, double balance) throws SQLException;
