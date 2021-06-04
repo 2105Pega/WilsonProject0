@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+
+  <title>Title</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      //CSS JQUERY
+      $("p").css({"webkit-text-fill-color": "#FFFFFF" ,"font-size": "xxx-large","margin": "auto"});
+      $("body").css("background-color","#f78200");
+      $(".SecondLayer").css({"background-color":"#008e98","width": "80%",
+        "height": "80%", "align":"center", "margin":"auto", "opacity": "100%"});
+      $("#logo").css({ "width": "80%", "background-position":"center",
+      "background-repeat":"no-repeat","background-size": "cover", "margin":"auto"});
+
+      //LANDING PAGE
+      $("#Home").hide();
+      $("#Welcome").click(function(){
+        $(this).hide();
+        $("#Home").show();
+      });
+    });
+  </script>
+  <link rel="stylesheet" type = "text/css" href="/resources/pages/css/style.css">
+</head>
+<body >
+<div class="SecondsLayer">
+<div id="Welcome" >
+  <p style="position: fixed; align-content: center;"> <i>Welcome to EQ Bank !!!</i></p>
+  <div id="logo"> <img src="eqcoin.png">
+    <button style="position: fixed; font-size: 60px; margin: 0 auto;">Login</button></div>
+</div>
+<div id="Home">
+<h1 style="padding: initial; alignment: center">Welcome to EQCoin Bank</h1>
+
+</div>
+</div>
+<script type="text/javascript" src="../scripts/event.js"></script>
+
+</body>
+</html>

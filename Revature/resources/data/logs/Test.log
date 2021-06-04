@@ -113,17 +113,323 @@ Testx = User{Userid=1661078385, username='Testx', name='Power to the Users!', pa
 2021-05-26 11:35:58,859 - test.ConnectionTesting -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
 2021-05-26 11:37:47,018 - main.models.Account -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
 2021-05-26 11:37:48,097 - main.models.Account -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 09:06:21,800 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 09:06:23,618 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 09:06:24,171 - main.dao.UserDAOImpl -INFO - New User added successfully:
+2021-05-27 09:06:21,800 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:06:23,618 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:06:24,171 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
 ---------------------------------
 Bob = User{Userid=870004288, username='Bob', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
 
-2021-05-27 09:57:26,441 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 09:57:28,265 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 13:06:03,669 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 13:06:07,380 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 13:06:08,000 - main.dao.UserDAOImpl -INFO - Success
-2021-05-27 13:08:33,299 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 13:08:35,350 - main.dao.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
-2021-05-27 13:08:35,894 - main.dao.UserDAOImpl -INFO - Success
+2021-05-27 09:57:26,441 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 09:57:28,265 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:03,669 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:07,380 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:06:08,000 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-27 13:08:33,299 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:08:35,350 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-27 13:08:35,894 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:36:15,040 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:36:17,288 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:36:17,963 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:36:18,445 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:36:19,039 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:37:16,688 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:37:18,090 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:37:18,626 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:37:19,088 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:37:19,951 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:39:06,409 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:08,146 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:08,701 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:09,154 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:09,699 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:39:47,662 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:48,850 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:49,421 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:50,203 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:39:50,738 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:40:27,774 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:40:29,021 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:40:29,594 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob1 = User{Userid=1790305495, username='Bob1', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 08:40:29,596 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:40:30,054 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:40:30,563 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:42:44,627 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:45,903 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:46,576 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:42:46,580 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:47,039 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:47,556 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:48,025 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:42:48,514 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:46:25,742 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:26,931 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:27,467 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob2 = User{Userid=715999673, username='Bob2', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 08:46:27,472 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:27,931 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:28,435 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:46:28,439 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:28,908 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:29,407 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:29,863 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:46:30,389 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:48:02,259 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:03,927 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:04,464 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob3 = User{Userid=2146552598, username='Bob3', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 08:48:04,467 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:04,925 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:05,774 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 08:48:05,778 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:06,242 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:06,764 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:07,203 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 08:48:07,687 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:05:52,665 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:54,204 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:54,730 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob4 = User{Userid=1269539269, username='Bob4', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 09:05:54,734 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:55,203 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:55,747 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:05:55,757 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:56,211 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:56,721 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:57,257 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:05:57,754 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:14:37,100 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:38,372 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:38,890 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob6 = User{Userid=131506402, username='Bob6', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 09:14:38,893 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:39,365 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:39,911 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:14:39,916 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:40,386 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:40,899 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:41,348 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:14:41,842 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:15:59,699 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:00,985 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:01,613 - main.dao.User.UserDAOImpl -INFO - New User added successfully:
+---------------------------------
+Bob6 = User{Userid=1069209503, username='Bob6', name='null', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 09:16:01,616 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:02,069 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:02,572 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 09:16:02,575 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:03,021 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:03,564 - main.dao.User.UserDAOImpl -INFO - New User updated successfully:
+---------------------------------
+Bob6 = User{Userid=1069209503, username='Bob6', name='OG Bobby', password='pwd1234', role='CUSTOMER', accounts=null, transactions=[]}
+
+2021-05-31 09:16:03,565 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:04,019 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 09:16:04,612 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 17:06:36,218 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 17:06:37,754 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 17:06:38,354 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 19:32:21,365 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:33:32,295 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:33:45,528 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:34:00,171 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:34:22,428 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:34:44,376 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:35:16,853 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:35:47,810 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 19:39:29,939 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 20:05:58,108 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 20:05:59,427 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 20:05:59,981 - main.dao.User.UserDAOImpl -INFO - Success
+2021-05-31 20:23:18,164 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 20:23:19,782 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-05-31 20:23:20,411 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-01 23:26:50,726 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:26:52,462 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:26:53,044 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-01 23:28:24,645 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:28:26,042 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:28:26,597 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-01 23:34:34,911 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:34:36,172 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:34:36,716 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-01 23:35:07,934 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:35:09,262 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:35:09,820 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-01 23:37:54,623 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:37:55,891 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-01 23:37:56,417 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:06:23,276 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:06:24,707 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:06:25,295 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:07:39,927 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:07:41,294 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:07:42,073 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:11:24,969 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:11:26,188 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:11:26,760 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:26:17,884 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:26:19,434 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:26:20,068 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:26:59,577 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:27:00,992 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:27:01,556 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:28:22,189 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:28:23,418 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:28:23,999 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:29:36,541 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:29:38,202 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:29:38,763 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:30:43,592 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:30:45,397 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:30:45,950 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:31:47,463 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:31:48,562 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:31:49,120 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:32:44,868 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:32:46,213 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:32:46,740 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:37:14,134 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:37:15,391 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:37:15,937 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:40:37,328 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:40:38,555 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:40:39,090 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:41:07,429 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:41:08,804 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:41:09,408 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:45:40,206 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:45:41,541 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:45:42,098 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 22:46:04,505 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:46:05,652 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 22:46:06,232 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:12:58,794 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:13:00,231 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:13:00,774 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:13:43,795 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:13:45,317 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:13:45,905 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:17:09,388 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:17:10,802 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:17:11,354 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:24:35,477 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:24:37,214 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:24:37,747 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:25:55,572 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:25:56,938 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:25:57,495 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:27:10,881 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:27:12,569 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:27:13,133 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:29:41,934 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:29:43,903 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:29:44,449 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:30:11,129 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:30:12,805 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:30:13,341 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:54:52,141 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:54:53,507 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:54:54,037 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-02 23:54:54,039 - main.dao.Account.AccountDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:54:54,506 - main.dao.Account.AccountDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-02 23:54:55,019 - main.dao.Account.AccountDAOImpl -INFO - Success
+2021-06-03 00:09:36,755 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:09:38,232 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:09:38,758 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:10:19,078 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:10:20,404 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:10:21,009 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:10:45,235 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:10:47,099 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:10:47,668 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:11:03,461 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:11:04,620 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:11:05,200 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:16:38,373 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:16:39,631 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:16:40,192 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:17:03,654 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:04,867 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:05,559 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:17:21,498 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:22,649 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:23,184 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:17:56,740 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:58,344 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:17:58,879 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:18:48,905 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:18:50,465 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:18:51,027 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:19:12,374 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:19:13,877 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:19:15,097 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:20:00,465 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:20:01,801 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:20:02,433 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:21:11,391 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:21:12,939 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:21:13,461 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:21:39,757 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:21:40,932 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:21:41,517 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:30:25,904 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:30:27,210 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:30:27,908 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:34:56,509 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:34:57,934 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:34:58,463 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:51:01,957 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:51:03,209 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:51:03,766 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:51:27,891 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:51:29,265 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:51:29,816 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 00:53:13,041 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:53:16,967 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 00:53:17,529 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:03:10,277 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:03:11,459 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:03:12,039 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:13:42,285 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:13:44,731 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:13:45,344 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:16:16,849 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:16:18,166 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:16:18,812 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:42:20,140 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:42:21,296 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:42:21,854 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:50:48,099 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:50:49,432 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:50:49,967 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 01:55:09,666 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:55:10,868 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 01:55:11,413 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 12:46:40,909 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 12:46:42,596 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 12:46:43,262 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 12:50:57,630 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 12:50:58,983 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 12:50:59,593 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 17:21:08,627 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:21:10,088 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:21:10,658 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 17:23:55,777 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:23:57,671 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:23:58,251 - main.dao.User.UserDAOImpl -INFO - Success
+2021-06-03 17:33:47,713 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:33:49,193 - main.dao.User.UserDAOImpl -INFO - Testing JDBC Connection: jdbc:postgresql://bank-database-1.clixxzb2bxft.us-east-2.rds.amazonaws.com:5432/eqbank?user=bankadmin&password=admin1234
+2021-06-03 17:33:49,763 - main.dao.User.UserDAOImpl -INFO - Success
