@@ -30,7 +30,7 @@ public interface AccountDAO {
   List<Account> ApproveAccount(int acc) throws SQLException;
   List<Account> AddUser (int user, int account) throws SQLException;
   boolean depositAmount(int account, double balance) throws SQLException;
-  boolean withdrawAmount(Account account) throws SQLException;
+  boolean withdrawAmount(int account, double balance) throws SQLException;
   boolean transferAmount(Account account) throws SQLException;
 
   //DELETE BASED ON ID

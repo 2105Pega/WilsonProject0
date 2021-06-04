@@ -68,8 +68,8 @@ public class AccountDAOImpl implements AccountDAO {
     AccountDAOImpl ao = new AccountDAOImpl();
     UserDAOImpl uo= new UserDAOImpl();
 
-    User First= uo.selectAllUsers().get(0);
-    First.setUserid(1069209503);
+    //User First= uo.selectAllUsers().get(0);
+    //First.setUserid(1069209503);
    // User bob=dao.users.get(0);
     //dao.updateUser(bob);
     //ao.createAccount(First);
@@ -77,7 +77,8 @@ public class AccountDAOImpl implements AccountDAO {
   // ao.createAccount(First);
    // ao.ApproveAccount(1649573132);
     //ao.selectAccountPending();
-    ao.depositAmount(1649573132,3.50);
+   // ao.depositAmount(1649573132,3.50);
+    ao.withdrawAmount(1649573132, 5.07);
   }
 
   ///CREATE ACCOUNT
@@ -301,9 +302,49 @@ public class AccountDAOImpl implements AccountDAO {
     }
 
   @Override
-  public boolean withdrawAmount(Account account) throws SQLException {
-    return false;
+  public boolean withdrawAmount(int account, double balance) throws SQLException {
+    Account reciever=selectAccountbyid(account).get(0);
+    Scanner scanner= new Scanner(System.in);
+    Connection connection=getConnection("eqbank");
+    Statement stmt=null;
+    System.out.println("How much to Withdraw?");
+    boolean available=!(reciever.getBalance() >= balance);
+    while (true) {
+      if (balance == 0 && available) { System.out.println("How much?");
+        try { balance = scanner.nextDouble();
+        } catch (Exception e) { logger.error(e.toString());
+          System.out.println("Amount is not cash value. Try again.");
+          }
+      } else if (balance < 0 && available) {
+        System.out.println("Anything higher than Zero.");
+        try { balance = scanner.nextDouble();
+        } catch (Exception e) { logger.error(e.toString());
+          System.out.println("Amount is not cash value. Try again."); }
+      } else if(balance>reciever.getBalance()){
+        System.out.println("Sorry Boss, only "+ reciever.getBalance() + " available. Try again.");
+        try { balance = scanner.nextDouble(); }
+        catch (Exception e) {
+          System.out.println("Amount is not cash value. Try again."); }
+      }
+      else if (reciever.getBalance() >= balance) { reciever.setBalance(reciever.getBalance() - balance);
+        try { update="update accounts SET balance="+reciever.getBalance()+" WHERE accountid="+reciever.getAccountNumber()+";";
+          connection= getConnection("eqbank");
+          stmt=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+          connection.setAutoCommit(false);
+          stmt.addBatch(update);
+          stmt.executeBatch();
+          connection.commit();
+          selectAccountbyid(reciever.getAccountNumber());}
+        catch (Exception e){e.printStackTrace();}
+        finally {
+          assert stmt != null;
+          stmt.close();
+          connection.close(); }
+        return true;
+      } else {
+        return false; } }
   }
+
 
   @Override
   public boolean transferAmount(Account account) throws SQLException {
